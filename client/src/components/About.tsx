@@ -7,8 +7,8 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Passionate data analyst with 5+ years of experience in turning
-            complex datasets into clear, actionable insights
+            Computer Science & Engineering student at American International University-Bangladesh,
+            passionate about data science, machine learning, and business intelligence
           </p>
         </div>
 
@@ -26,35 +26,34 @@ const About = () => {
                 My Journey
               </h3>
               <p className="text-slate-600 leading-relaxed mb-6">
-                I'm a results-driven data analyst with a passion for uncovering
-                hidden patterns in complex datasets. With expertise in
-                statistical analysis, machine learning, and business
-                intelligence, I help organizations make data-driven decisions
-                that drive growth and efficiency.
+                I'm a Computer Science and Engineering student specializing in Information Systems,
+                with a passion for leveraging data analysis, machine learning, and BI Development 
+                to drive innovation. Currently pursuing my Bachelor's degree at American International 
+                University-Bangladesh with a CGPA of 3.78.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                My approach combines technical expertise with business acumen,
-                ensuring that every analysis delivers practical value and
-                actionable recommendations.
+                My goal is to contribute to cutting-edge research and industry solutions while 
+                continuously enhancing my technical and analytical expertise in data science, 
+                computer vision, and business intelligence.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center p-4 bg-slate-50 rounded-lg">
-                <div className="text-2xl font-bold text-primary">5+</div>
-                <div className="text-sm text-slate-600">Years Experience</div>
+                <div className="text-2xl font-bold text-primary">3.78</div>
+                <div className="text-sm text-slate-600">CGPA</div>
               </div>
               <div className="text-center p-4 bg-slate-50 rounded-lg">
-                <div className="text-2xl font-bold text-primary">50+</div>
-                <div className="text-sm text-slate-600">Projects</div>
+                <div className="text-2xl font-bold text-primary">8+</div>
+                <div className="text-sm text-slate-600">Major Projects</div>
               </div>
               <div className="text-center p-4 bg-slate-50 rounded-lg">
-                <div className="text-2xl font-bold text-primary">15+</div>
-                <div className="text-sm text-slate-600">Satisfied Clients</div>
+                <div className="text-2xl font-bold text-primary">2025</div>
+                <div className="text-sm text-slate-600">Expected Graduation</div>
               </div>
               <div className="text-center p-4 bg-slate-50 rounded-lg">
-                <div className="text-2xl font-bold text-primary">99%</div>
-                <div className="text-sm text-slate-600">Client Satisfaction</div>
+                <div className="text-2xl font-bold text-primary">Dean's List</div>
+                <div className="text-sm text-slate-600">2023, 2024</div>
               </div>
             </div>
           </div>

@@ -4,58 +4,76 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Sales Analytics Dashboard",
+      title: "Bengali License Plate Recognition System",
       description:
-        "Interactive dashboard analyzing sales performance across multiple channels, resulting in 23% increase in conversion rates.",
+        "Developed a Bengali license plate recognition system using MobileNet for detection and Real-ESRGAN for image enhancement, applying deep learning techniques to improve accuracy on low-quality images.",
+      image:
+        "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+      alt: "Bengali license plate recognition system with deep learning models",
+      tags: ["Python", "MobileNet", "Real-ESRGAN"],
+    },
+    {
+      title: "CNN-Based Automatic Attendance System",
+      description:
+        "Built a facial recognition-based attendance system using CNN, leveraging Python, OpenCV, and TensorFlow for real-time detection and automated attendance logging.",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+      alt: "Facial recognition attendance system using CNN",
+      tags: ["Python", "OpenCV", "TensorFlow"],
+    },
+    {
+      title: "Stroke Prediction & Correlation Analysis",
+      description:
+        "Conducted stroke risk prediction using statistical analysis and correlation modeling in R, with data visualization through ggplot2, ggcorrplot, and various statistical testing methods.",
+      image:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+      alt: "Stroke prediction analysis with correlation visualizations",
+      tags: ["R", "ggplot2", "Statistics"],
+    },
+    {
+      title: "Hotel Customer Data Analysis Dashboard",
+      description:
+        "Designed interactive Power BI dashboards to visualize hotel customer behavior and KPIs, using Power Query and DAX for data transformation and generating actionable business insights.",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Interactive sales analytics dashboard showing revenue trends and KPIs",
-      tags: ["Python", "Tableau", "SQL"],
+      alt: "Hotel customer data analysis dashboard in Power BI",
+      tags: ["Power BI", "DAX", "Power Query"],
     },
     {
-      title: "Customer Segmentation Analysis",
+      title: "Wi-Steer: Wireless ESP32 Racing Controller",
       description:
-        "Machine learning model to segment customers based on purchase behavior, improving targeted marketing ROI by 40%.",
+        "Designed and built a wireless steering wheel controller using ESP32 and sensors to enable intuitive gameplay for PC racing games, focusing on human-computer interaction principles.",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Customer segmentation analysis with demographic charts and behavioral patterns",
-      tags: ["Python", "K-Means", "Pandas"],
+        "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+      alt: "Wireless ESP32-based steering wheel controller for gaming",
+      tags: ["ESP32", "IoT", "HCI"],
     },
     {
-      title: "Predictive Analytics Model",
+      title: "Elderly Care and Monitoring System",
       description:
-        "Time series forecasting model for inventory management, reducing stockouts by 35% and optimizing supply chain costs.",
-      image:
-        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Predictive analytics model showing forecasting charts and trend analysis",
-      tags: ["R", "ARIMA", "Time Series"],
-    },
-    {
-      title: "Business Intelligence Dashboard",
-      description:
-        "Executive dashboard consolidating KPIs from multiple sources, enabling data-driven decision making across departments.",
+        "Built a responsive web application for elderly care using HTML, CSS, JavaScript, PHP, and AJAX, integrating real-time reporting, health tracking, and caregiver communication features.",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Business intelligence dashboard with KPI metrics and performance indicators",
-      tags: ["Power BI", "DAX", "SQL Server"],
+      alt: "Elderly care monitoring system web application",
+      tags: ["HTML", "PHP", "JavaScript"],
     },
     {
-      title: "A/B Testing Analysis",
+      title: "US Economic & Demographic Analysis",
       description:
-        "Statistical analysis of website experiments, validating design changes that increased user engagement by 28%.",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "A/B testing analysis dashboard showing conversion rates and statistical significance",
-      tags: ["Python", "Scipy", "Statistics"],
-    },
-    {
-      title: "Market Research Analysis",
-      description:
-        "Comprehensive market analysis identifying growth opportunities and competitive positioning strategies for product launch.",
+        "Conducted multi-dimensional analysis of US census and economic data, creating comparative Power BI reports on state-wise GDP, population, and education indicators.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Market research analysis with demographic data and consumer behavior insights",
-      tags: ["R", "ggplot2", "Survey Analysis"],
+      alt: "US economic and demographic analysis dashboard",
+      tags: ["Power BI", "Data Analysis", "Economics"],
+    },
+    {
+      title: "World Bank Development Indicators Analysis",
+      description:
+        "Analyzed World Bank development indicators such as GDP, Population, Income and developed global trend dashboards in Power BI to support evidence-based policy and research.",
+      image:
+        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+      alt: "World Bank development indicators analysis dashboard",
+      tags: ["Power BI", "Global Data", "Policy Analysis"],
     },
   ];
 
@@ -63,19 +81,25 @@ const Projects = () => {
     const colors = {
       Python: "bg-primary/10 text-primary",
       R: "bg-primary/10 text-primary",
-      SQL: "bg-emerald-500/10 text-emerald-500",
-      Tableau: "bg-accent/10 text-accent",
       "Power BI": "bg-accent/10 text-accent",
-      Pandas: "bg-emerald-500/10 text-emerald-500",
-      "K-Means": "bg-accent/10 text-accent",
-      ARIMA: "bg-accent/10 text-accent",
-      "Time Series": "bg-emerald-500/10 text-emerald-500",
-      DAX: "bg-accent/10 text-accent",
-      "SQL Server": "bg-emerald-500/10 text-emerald-500",
-      Scipy: "bg-accent/10 text-accent",
-      Statistics: "bg-emerald-500/10 text-emerald-500",
+      TensorFlow: "bg-emerald-500/10 text-emerald-500",
+      OpenCV: "bg-emerald-500/10 text-emerald-500",
+      MobileNet: "bg-emerald-500/10 text-emerald-500",
+      "Real-ESRGAN": "bg-emerald-500/10 text-emerald-500",
       ggplot2: "bg-accent/10 text-accent",
-      "Survey Analysis": "bg-emerald-500/10 text-emerald-500",
+      Statistics: "bg-emerald-500/10 text-emerald-500",
+      DAX: "bg-accent/10 text-accent",
+      "Power Query": "bg-accent/10 text-accent",
+      ESP32: "bg-primary/10 text-primary",
+      IoT: "bg-primary/10 text-primary",
+      HCI: "bg-primary/10 text-primary",
+      HTML: "bg-emerald-500/10 text-emerald-500",
+      PHP: "bg-emerald-500/10 text-emerald-500",
+      JavaScript: "bg-emerald-500/10 text-emerald-500",
+      "Data Analysis": "bg-accent/10 text-accent",
+      Economics: "bg-accent/10 text-accent",
+      "Global Data": "bg-accent/10 text-accent",
+      "Policy Analysis": "bg-accent/10 text-accent",
     };
     return colors[tag as keyof typeof colors] || "bg-slate-100 text-slate-600";
   };

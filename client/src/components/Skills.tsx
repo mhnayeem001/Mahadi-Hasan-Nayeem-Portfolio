@@ -26,29 +26,29 @@ const Skills = () => {
       icon: <Code className="h-6 w-6" />,
       color: "bg-primary",
       skills: [
-        { name: "Python", level: 95 },
-        { name: "R", level: 90 },
-        { name: "SQL", level: 92 },
+        { name: "Python", level: 90 },
+        { name: "R", level: 88 },
+        { name: "SQL", level: 85 },
       ],
     },
     {
-      title: "Data Analysis",
+      title: "Data Analysis & BI",
       icon: <TrendingUp className="h-6 w-6" />,
       color: "bg-accent",
       skills: [
-        { name: "Pandas", level: 93 },
-        { name: "NumPy", level: 88 },
-        { name: "Scikit-learn", level: 85 },
+        { name: "Power BI", level: 90 },
+        { name: "Excel", level: 85 },
+        { name: "Pandas", level: 88 },
       ],
     },
     {
-      title: "Visualization",
+      title: "Machine Learning",
       icon: <PieChart className="h-6 w-6" />,
       color: "bg-emerald-500",
       skills: [
-        { name: "Tableau", level: 90 },
-        { name: "Power BI", level: 87 },
-        { name: "Matplotlib", level: 85 },
+        { name: "TensorFlow", level: 85 },
+        { name: "PyTorch", level: 82 },
+        { name: "OpenCV", level: 88 },
       ],
     },
   ];
@@ -61,8 +61,8 @@ const Skills = () => {
             Technical Skills
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Proficient in a wide range of data analysis tools and programming
-            languages
+            Proficient in data analysis, machine learning, deep learning, and 
+            business intelligence tools
           </p>
         </div>
 

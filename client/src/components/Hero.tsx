@@ -18,13 +18,13 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Data Analyst &{" "}
-              <span className="text-primary">Business Intelligence</span> Expert
+              Computer Science &{" "}
+              <span className="text-primary">Data Science</span> Student
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Transforming raw data into actionable insights that drive business
-              growth. Specialized in statistical analysis, data visualization,
-              and predictive modeling.
+              Passionate about leveraging data analysis, machine learning, and BI 
+              Development to drive innovation. Specializing in Computer Vision, 
+              Deep Learning, and Business Intelligence solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
@@ -52,12 +52,12 @@ const Hero = () => {
               className="rounded-2xl shadow-2xl w-full h-auto"
             />
             <div className="absolute -top-4 -left-4 bg-white p-4 rounded-lg shadow-lg">
-              <div className="text-2xl font-bold text-primary">95%</div>
-              <div className="text-sm text-slate-600">Accuracy Rate</div>
+              <div className="text-2xl font-bold text-primary">3.78</div>
+              <div className="text-sm text-slate-600">CGPA</div>
             </div>
             <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg">
-              <div className="text-2xl font-bold text-accent">50+</div>
-              <div className="text-sm text-slate-600">Projects Completed</div>
+              <div className="text-2xl font-bold text-accent">8+</div>
+              <div className="text-sm text-slate-600">Major Projects</div>
             </div>
           </div>
         </div>

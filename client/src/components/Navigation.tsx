@@ -28,6 +28,7 @@ const Navigation = () => {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
+    { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" },
   ];
@@ -48,7 +49,7 @@ const Navigation = () => {
               onClick={() => scrollToSection("home")}
               className="text-xl font-bold text-primary hover:text-blue-600 transition-colors"
             >
-              DataAnalyst
+              Mahadi Hasan Nayeem
             </button>
           </div>
 

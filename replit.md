@@ -1,8 +1,8 @@
-# Data Analyst Portfolio - Replit Development Guide
+# Mahadi Hasan Nayeem's Portfolio - Replit Development Guide
 
 ## Overview
 
-This is a modern full-stack web application for a data analyst portfolio website. The application showcases professional work, skills, and provides a contact form for potential clients. It features a React frontend with shadcn/ui components, an Express.js backend, and PostgreSQL database integration using Drizzle ORM.
+This is a modern full-stack web application for Mahadi Hasan Nayeem's personal portfolio website. The application showcases his computer science and data science work, skills, education, and professional experience. It features a React frontend with shadcn/ui components, an Express.js backend, and PostgreSQL database integration using Drizzle ORM.
 
 ## User Preferences
 
@@ -32,13 +32,14 @@ Preferred communication style: Simple, everyday language.
 ## Key Components
 
 ### Frontend Components
-- **Navigation**: Sticky header with smooth scrolling navigation
-- **Hero Section**: Landing area with call-to-action buttons
-- **About Section**: Professional background and statistics
-- **Skills Section**: Animated skill bars with categories (Programming, Data Analysis, Visualization)
-- **Projects Section**: Portfolio showcase with project cards
+- **Navigation**: Sticky header with smooth scrolling navigation (Home, About, Skills, Experience, Projects, Contact)
+- **Hero Section**: Landing area highlighting Computer Science & Data Science expertise
+- **About Section**: Academic background and career objectives with CGPA and graduation timeline
+- **Skills Section**: Animated skill bars with categories (Programming, Data Analysis & BI, Machine Learning)
+- **Experience Section**: Professional work history and academic achievements
+- **Projects Section**: Portfolio showcase featuring real projects from CV (Bengali License Plate Recognition, CNN Attendance System, Power BI Dashboards, etc.)
 - **Contact Form**: Validated form with success/error handling
-- **Footer**: Links and social media integration
+- **Footer**: Professional links and expertise areas
 
 ### Backend Components
 - **Routes**: API endpoints for contact form submission and data retrieval
@@ -125,4 +126,40 @@ Preferred communication style: Simple, everyday language.
 └── migrations/      # Database migrations
 ```
 
-The application follows modern full-stack development practices with clear separation of concerns, type safety throughout, and a responsive, accessible user interface optimized for showcasing data analysis work.
+The application follows modern full-stack development practices with clear separation of concerns, type safety throughout, and a responsive, accessible user interface optimized for showcasing Mahadi Hasan Nayeem's computer science and data science work.
+
+## Recent Changes: Latest modifications with dates
+
+### January 15, 2025
+- **Personalized Portfolio**: Updated entire portfolio with Mahadi Hasan Nayeem's actual information from CV
+- **Updated Personal Information**: 
+  - Name: Mahadi Hasan Nayeem
+  - Email: mhnayem01@gmail.com
+  - Phone: +88016380-01725
+  - Location: Kuril, Dhaka, Bangladesh
+- **Academic Information**:
+  - CGPA: 3.78 (American International University-Bangladesh)
+  - Expected Graduation: October 2025
+  - Specialization: Computer Science & Engineering (Information Systems)
+- **Real Projects Integration**: Added all 8 major projects from CV including:
+  - Bengali License Plate Recognition System (MobileNet, Real-ESRGAN)
+  - CNN-Based Automatic Attendance System (OpenCV, TensorFlow)
+  - Stroke Prediction & Correlation Analysis (R, ggplot2)
+  - Hotel Customer Data Analysis Dashboard (Power BI, DAX)
+  - Wi-Steer: Wireless ESP32 Racing Controller
+  - Elderly Care and Monitoring System (HTML, PHP, JavaScript)
+  - US Economic & Demographic Analysis (Power BI)
+  - World Bank Development Indicators Analysis
+- **Skills Update**: Updated skill categories to reflect actual expertise:
+  - Programming: Python (90%), R (88%), SQL (85%)
+  - Data Analysis & BI: Power BI (90%), Excel (85%), Pandas (88%)
+  - Machine Learning: TensorFlow (85%), PyTorch (82%), OpenCV (88%)
+- **Experience Section**: Added new Experience component with:
+  - Managing Director at AIO I.T LTD. (2020-2023)
+  - Junior Financial Analyst at A.A. Engineering & Consultancy Firm (2024-2025)
+  - Course Advisor at AIO I.T LTD. (2021-2023)
+- **Achievements**: Added honors and awards section:
+  - Dean's List Honor Award (2023, 2024)
+  - GYA Youth Leadership Award (2020)
+  - National Science Award 5th place (2018)
+- **Navigation Update**: Added Experience section to navigation menu

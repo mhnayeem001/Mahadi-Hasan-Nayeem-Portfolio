@@ -14,10 +14,10 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Data Analyst Portfolio</h3>
+            <h3 className="text-2xl font-bold mb-4">Mahadi Hasan Nayeem</h3>
             <p className="text-slate-400 mb-4">
-              Transforming complex data into clear, actionable insights that
-              drive business success.
+              Computer Science & Engineering student passionate about data 
+              science, machine learning, and business intelligence solutions.
             </p>
             <div className="flex space-x-4">
               <Button
@@ -83,19 +83,19 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Services</h4>
+            <h4 className="text-lg font-semibold mb-4">Expertise</h4>
             <ul className="space-y-2">
               <li>
                 <span className="text-slate-400">Data Analysis</span>
               </li>
               <li>
-                <span className="text-slate-400">Business Intelligence</span>
+                <span className="text-slate-400">Machine Learning</span>
               </li>
               <li>
-                <span className="text-slate-400">Data Visualization</span>
+                <span className="text-slate-400">Computer Vision</span>
               </li>
               <li>
-                <span className="text-slate-400">Predictive Modeling</span>
+                <span className="text-slate-400">Power BI Development</span>
               </li>
             </ul>
           </div>
@@ -103,7 +103,7 @@ const Footer = () => {
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
           <p className="text-slate-400">
-            © 2024 Data Analyst Portfolio. All rights reserved.
+            © 2024 Mahadi Hasan Nayeem. All rights reserved.
           </p>
         </div>
       </div>
