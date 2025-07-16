@@ -1,108 +1,134 @@
-import { useEffect, useState } from "react";
-import { Code, TrendingUp, PieChart } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  Code,
+  Database,
+  BarChart,
+  Brain,
+  Globe2,
+  LayoutGrid,
+} from "lucide-react";
+import { skillIconMap } from "../icon"; // Make sure this is correctly linked
+
+const skillCategories = [
+  {
+    title: "Programming",
+    icon: Code,
+    color: "from-indigo-500 to-purple-500",
+    skills: ["Python", "R"],
+  },
+  {
+    title: "Data Analysis & Visualization",
+    icon: BarChart,
+    color: "from-yellow-400 to-orange-500",
+    skills: ["Excel", "Power BI"],
+  },
+  {
+    title: "Machine Learning & Deep Learning",
+    icon: Brain,
+    color: "from-pink-500 to-red-500",
+    skills: [
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "TensorFlow",
+      "Keras",
+      "PyTorch",
+      "OpenCV",
+    ],
+  },
+  {
+    title: "Databases",
+    icon: Database,
+    color: "from-green-500 to-emerald-500",
+    skills: ["SQL", "MySQL"],
+  },
+  {
+    title: "Web Development",
+    icon: Globe2,
+    color: "from-blue-500 to-cyan-500",
+    skills: ["HTML", "CSS", "JavaScript", "PHP", "AJAX"],
+  },
+  {
+    title: "Tools & Libraries",
+    icon: LayoutGrid,
+    color: "from-rose-400 to-pink-500",
+    skills: ["VS Code", "Git", "Jupyter Notebook", "Anaconda"],
+  },
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const Skills = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const skillsSection = document.getElementById("skills");
-      if (skillsSection) {
-        const rect = skillsSection.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          setIsVisible(true);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check on mount
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const skillCategories = [
-    {
-      title: "Programming",
-      icon: <Code className="h-6 w-6" />,
-      color: "bg-primary",
-      skills: [
-        { name: "Python", level: 90 },
-        { name: "R", level: 88 },
-        { name: "SQL", level: 85 },
-      ],
-    },
-    {
-      title: "Data Analysis & BI",
-      icon: <TrendingUp className="h-6 w-6" />,
-      color: "bg-accent",
-      skills: [
-        { name: "Power BI", level: 90 },
-        { name: "Excel", level: 85 },
-        { name: "Pandas", level: 88 },
-      ],
-    },
-    {
-      title: "Machine Learning",
-      icon: <PieChart className="h-6 w-6" />,
-      color: "bg-emerald-500",
-      skills: [
-        { name: "TensorFlow", level: 85 },
-        { name: "PyTorch", level: 82 },
-        { name: "OpenCV", level: 88 },
-      ],
-    },
-  ];
-
   return (
-    <section id="skills" className="py-20 bg-slate-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="skills"
+      className="py-24 bg-gradient-to-b from-white to-slate-100 dark:from-slate-900 dark:to-slate-950 transition-colors duration-500"
+    >
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
             Technical Skills
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Proficient in data analysis, machine learning, deep learning, and 
-            business intelligence tools
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            A hands-on developer with a deep focus on data, AI, and web technologies.
+            Always evolving with the tools of tomorrow.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className="bg-white p-6 rounded-xl shadow-sm"
-            >
-              <div className="flex items-center mb-4">
-                <div className={`text-white p-2 rounded-lg mr-3 ${category.color.replace('bg-', 'bg-')}`}>
-                  {category.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900">
-                  {category.title}
-                </h3>
-              </div>
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-slate-700">{skill.name}</span>
-                      <span className={`font-mono text-sm ${category.color.replace('bg-', 'text-')}`}>
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-slate-200 rounded-full h-2">
-                      <div
-                        className={`h-2 rounded-full skill-progress-bar ${category.color}`}
-                        style={{
-                          width: isVisible ? `${skill.level}%` : "0%",
-                        }}
-                      />
-                    </div>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {skillCategories.map((category, index) => {
+            const Icon = category.icon;
+            return (
+              <motion.div
+                key={index}
+                className="group p-6 rounded-2xl shadow-md border border-slate-200 dark:border-slate-700 backdrop-blur-md bg-white/70 dark:bg-slate-800/60 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                variants={cardVariants}
+              >
+                <div
+                  className={`absolute -top-5 -right-5 w-40 h-40 bg-gradient-to-br ${category.color} opacity-10 group-hover:opacity-20 rounded-full blur-2xl transition-opacity duration-300 z-0`}
+                />
+                <div className="relative z-10 flex items-center mb-5">
+                  <div
+                    className={`p-3 rounded-xl bg-gradient-to-tr ${category.color} text-white mr-4`}
+                  >
+                    <Icon className="h-6 w-6" />
                   </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                    {category.title}
+                  </h3>
+                </div>
+                <ul className="relative z-10 text-slate-700 dark:text-slate-300 space-y-2 text-[15px]">
+                  {category.skills.map((skill, skillIdx) => (
+                    <li key={skillIdx} className="flex items-center gap-2">
+                      {skillIconMap[skill] ?? (
+                        <span className="h-5 w-5 inline-block bg-gray-300 dark:bg-slate-600 rounded" />
+                      )}
+                      <span>{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );

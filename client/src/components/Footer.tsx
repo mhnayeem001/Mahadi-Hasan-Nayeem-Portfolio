@@ -1,7 +1,10 @@
-import { Linkedin, Github, Twitter } from "lucide-react";
+import { Linkedin, Github, Facebook, Instagram, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const Footer = () => {
+  const [isLight, setIsLight] = useState(false);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -9,38 +12,101 @@ const Footer = () => {
     }
   };
 
+  const toggleNameColor = () => {
+    setIsLight(!isLight);
+  };
+
   return (
     <footer className="bg-slate-900 text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Mahadi Hasan Nayeem</h3>
+            {/* Toggle Color on Click */}
+            <h3
+              onClick={toggleNameColor}
+              className={`text-2xl font-bold mb-4 cursor-pointer transition-colors duration-300 ${
+                isLight ? "text-slate-300" : "text-white"
+              }`}
+            >
+              Mahadi Hasan Nayeem
+            </h3>
+
             <p className="text-slate-400 mb-4">
-              Computer Science & Engineering student passionate about data 
+              Computer Science & Engineering student passionate about data
               science, machine learning, and business intelligence solutions.
             </p>
+
+            {/* Social Icons with Links */}
             <div className="flex space-x-4">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-slate-400 hover:text-white"
+              <a
+                href="https://www.linkedin.com/in/mahadihasannayeem/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-slate-400 hover:text-white"
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-slate-400 hover:text-white"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </Button>
+              </a>
+
+              <a
+                href="https://github.com/mhnayeem001"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Github className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-slate-400 hover:text-white"
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-slate-400 hover:text-white"
+                >
+                  <Github className="h-5 w-5" />
+                </Button>
+              </a>
+
+              <a
+                href="https://x.com/mhnayem79521711?s=21"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Twitter className="h-5 w-5" />
-              </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-slate-400 hover:text-white"
+                >
+                  <X className="h-5 w-5" />
+                </Button>
+              </a>
+
+              <a
+                href="https://www.facebook.com/mh.nayeem.01"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-slate-400 hover:text-white"
+                >
+                  <Facebook className="h-5 w-5" />
+                </Button>
+              </a>
+
+              <a
+                href="https://www.instagram.com/mahadi_hasan_nayem/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-slate-400 hover:text-white"
+                >
+                  <Instagram className="h-5 w-5" />
+                </Button>
+              </a>
             </div>
           </div>
 

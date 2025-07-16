@@ -1,186 +1,320 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, BarChart2, Cpu, BrainCircuit, Database, Code } from "lucide-react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Projects = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  // Professional color palette
+  const colors = {
+    primary: {
+      light: "bg-blue-100 text-blue-800",
+      medium: "bg-blue-600 text-white",
+      dark: "bg-blue-800 text-white",
+      text: "text-blue-600",
+      border: "border-blue-200"
+    },
+    secondary: {
+      light: "bg-purple-100 text-purple-800",
+      medium: "bg-purple-600 text-white",
+      dark: "bg-purple-800 text-white",
+      text: "text-purple-600",
+      border: "border-purple-200"
+    },
+    accent: {
+      light: "bg-emerald-100 text-emerald-800",
+      medium: "bg-emerald-600 text-white",
+      dark: "bg-emerald-800 text-white",
+      text: "text-emerald-600",
+      border: "border-emerald-200"
+    },
+    neutral: {
+      light: "bg-gray-100 text-gray-800",
+      medium: "bg-gray-600 text-white",
+      dark: "bg-gray-800 text-white",
+      text: "text-gray-600",
+      border: "border-gray-200"
+    }
+  };
+
+  // Projects data with all 9 projects
   const projects = [
     {
-      title: "Bengali License Plate Recognition System",
-      description:
-        "Developed a Bengali license plate recognition system using MobileNet for detection and Real-ESRGAN for image enhancement, applying deep learning techniques to improve accuracy on low-quality images.",
-      image:
-        "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Bengali license plate recognition system with deep learning models",
-      tags: ["Python", "MobileNet", "Real-ESRGAN"],
+      title: "Power BI World Bank Data Analysis",
+      description: "Analyze global economic and social indicators from World Bank data. Create interactive Power BI dashboards to explore country-level statistics. Include environmental data such as NASA global temperature records.",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      alt: "Power BI World Bank Data Analysis",
+      tags: ["Power BI", "Data Analysis", "Environment"],
+      githubUrl: "https://github.com/mhnayeem001/Power-BI-World-Bank-Data-Analysis",
+      category: "Power BI",
+      icon: <BarChart2 className="h-5 w-5" />
     },
     {
-      title: "CNN-Based Automatic Attendance System",
-      description:
-        "Built a facial recognition-based attendance system using CNN, leveraging Python, OpenCV, and TensorFlow for real-time detection and automated attendance logging.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Facial recognition attendance system using CNN",
-      tags: ["Python", "OpenCV", "TensorFlow"],
-    },
-    {
-      title: "Stroke Prediction & Correlation Analysis",
-      description:
-        "Conducted stroke risk prediction using statistical analysis and correlation modeling in R, with data visualization through ggplot2, ggcorrplot, and various statistical testing methods.",
-      image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Stroke prediction analysis with correlation visualizations",
-      tags: ["R", "ggplot2", "Statistics"],
-    },
-    {
-      title: "Hotel Customer Data Analysis Dashboard",
-      description:
-        "Designed interactive Power BI dashboards to visualize hotel customer behavior and KPIs, using Power Query and DAX for data transformation and generating actionable business insights.",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Hotel customer data analysis dashboard in Power BI",
-      tags: ["Power BI", "DAX", "Power Query"],
-    },
-    {
-      title: "Wi-Steer: Wireless ESP32 Racing Controller",
-      description:
-        "Designed and built a wireless steering wheel controller using ESP32 and sensors to enable intuitive gameplay for PC racing games, focusing on human-computer interaction principles.",
-      image:
-        "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Wireless ESP32-based steering wheel controller for gaming",
-      tags: ["ESP32", "IoT", "HCI"],
-    },
-    {
-      title: "Elderly Care and Monitoring System",
-      description:
-        "Built a responsive web application for elderly care using HTML, CSS, JavaScript, PHP, and AJAX, integrating real-time reporting, health tracking, and caregiver communication features.",
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Elderly care monitoring system web application",
-      tags: ["HTML", "PHP", "JavaScript"],
+      title: "Sales Performance Dashboard Analysis",
+      description: "Developed a comprehensive Power BI Sales Dashboard using SQL Server and DAX with interactive reports.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "Sales Performance Dashboard",
+      tags: ["Power BI", "Data Analysis", "DAX"],
+      githubUrl: "https://github.com/mhnayeem001/Power-BI-Sales-Dashboard-Project",
+      category: "Power BI",
+      icon: <BarChart2 className="h-5 w-5" />
     },
     {
       title: "US Economic & Demographic Analysis",
-      description:
-        "Conducted multi-dimensional analysis of US census and economic data, creating comparative Power BI reports on state-wise GDP, population, and education indicators.",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "US economic and demographic analysis dashboard",
+      description: "Interactive Power BI dashboards analyzing U.S. Census and economic datasets across states.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "US Economic Dashboard",
       tags: ["Power BI", "Data Analysis", "Economics"],
+      githubUrl: "https://github.com/mhnayeem001/Power-BI-Trends-Across-US-States-Data-Analysis-",
+      category: "Power BI",
+      icon: <BarChart2 className="h-5 w-5" />
     },
     {
-      title: "World Bank Development Indicators Analysis",
-      description:
-        "Analyzed World Bank development indicators such as GDP, Population, Income and developed global trend dashboards in Power BI to support evidence-based policy and research.",
-      image:
-        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "World Bank development indicators analysis dashboard",
-      tags: ["Power BI", "Global Data", "Policy Analysis"],
+      title: "Hotel Customer Data Analysis",
+      description: "Power BI dashboards visualizing hotel customer behavior and KPIs with Power Query transformations.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "Hotel Data Dashboard",
+      tags: ["Power BI", "DAX", "Power Query"],
+      githubUrl: "https://github.com/mhnayeem001/Power-BI-Hotel-Management-Data-Analysis-",
+      category: "Power BI",
+      icon: <BarChart2 className="h-5 w-5" />
     },
+    {
+      title: "Bengali License Plate Recognition",
+      description: "License plate recognition system using MobileNet and Real-ESRGAN for image enhancement.",
+      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "License Plate Recognition",
+      tags: ["Python", "MobileNet", "Real-ESRGAN"],
+      githubUrl: "https://github.com/mhnayeem001/CVPR",
+      category: "Machine Learning",
+      icon: <BrainCircuit className="h-5 w-5" />
+    },
+    {
+      title: "CNN-Based Attendance System",
+      description: "Facial recognition attendance system using CNN, OpenCV and TensorFlow with real-time detection.",
+      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "Facial Recognition System",
+      tags: ["Python", "OpenCV", "TensorFlow"],
+      githubUrl: "https://github.com/mhnayeem001/CVPR",
+      category: "Machine Learning",
+      icon: <BrainCircuit className="h-5 w-5" />
+    },
+    {
+      title: "Stroke Prediction Analysis",
+      description: "Stroke risk prediction using statistical analysis and correlation modeling in R with visualization.",
+      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "Stroke Prediction Analysis",
+      tags: ["R", "ggplot2", "Statistics"],
+      githubUrl: "https://github.com/mhnayeem001/Data-Science",
+      category: "Data Science",
+      icon: <Database className="h-5 w-5" />
+    },
+    {
+      title: "Wi-Steer Racing Controller",
+      description: "Wireless ESP32 steering wheel controller for PC racing games with sensor integration.",
+      image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "Racing Controller",
+      tags: ["ESP32", "IoT", "HCI"],
+      githubUrl: "https://www.linkedin.com/posts/mahadihasannayeem_check-out-the-demo-video-details-we-activity-7344292748415422464-wR4e",
+      category: "IoT",
+      icon: <Cpu className="h-5 w-5" />
+    },
+    {
+      title: "Elderly Care Monitoring System",
+      description: "Web application for elderly care with real-time reporting using PHP, JavaScript and AJAX.",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "Elderly Care System",
+      tags: ["HTML", "PHP", "JavaScript"],
+      githubUrl: "https://github.com/mhnayeem001/Web-Tech",
+      category: "Web Development",
+      icon: <Code className="h-5 w-5" />
+    }
   ];
 
+  const categories = [
+    "All",
+    "Power BI",
+    "Machine Learning",
+    "Data Science",
+    "IoT",
+    "Web Development"
+  ];
+
+  const filteredProjects = activeFilter === "All" 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter);
+
   const getTagColor = (tag: string) => {
-    const colors = {
-      Python: "bg-primary/10 text-primary",
-      R: "bg-primary/10 text-primary",
-      "Power BI": "bg-accent/10 text-accent",
-      TensorFlow: "bg-emerald-500/10 text-emerald-500",
-      OpenCV: "bg-emerald-500/10 text-emerald-500",
-      MobileNet: "bg-emerald-500/10 text-emerald-500",
-      "Real-ESRGAN": "bg-emerald-500/10 text-emerald-500",
-      ggplot2: "bg-accent/10 text-accent",
-      Statistics: "bg-emerald-500/10 text-emerald-500",
-      DAX: "bg-accent/10 text-accent",
-      "Power Query": "bg-accent/10 text-accent",
-      ESP32: "bg-primary/10 text-primary",
-      IoT: "bg-primary/10 text-primary",
-      HCI: "bg-primary/10 text-primary",
-      HTML: "bg-emerald-500/10 text-emerald-500",
-      PHP: "bg-emerald-500/10 text-emerald-500",
-      JavaScript: "bg-emerald-500/10 text-emerald-500",
-      "Data Analysis": "bg-accent/10 text-accent",
-      Economics: "bg-accent/10 text-accent",
-      "Global Data": "bg-accent/10 text-accent",
-      "Policy Analysis": "bg-accent/10 text-accent",
+    const colorMap: Record<string, string> = {
+      // Power BI tags
+      "Power BI": colors.primary.light,
+      "Data Analysis": colors.primary.light,
+      "DAX": colors.primary.light,
+      "Power Query": colors.primary.light,
+      "Economics": colors.primary.light,
+      "Environment": colors.primary.light,
+
+      // Machine Learning tags
+      "Python": colors.secondary.light,
+      "TensorFlow": colors.secondary.light,
+      "OpenCV": colors.secondary.light,
+      "MobileNet": colors.secondary.light,
+      "Real-ESRGAN": colors.secondary.light,
+
+      // Data Science tags
+      "R": colors.accent.light,
+      "ggplot2": colors.accent.light,
+      "Statistics": colors.accent.light,
+
+      // Other tags
+      "ESP32": colors.neutral.light,
+      "IoT": colors.neutral.light,
+      "HCI": colors.neutral.light,
+      "HTML": colors.neutral.light,
+      "PHP": colors.neutral.light,
+      "JavaScript": colors.neutral.light
     };
-    return colors[tag as keyof typeof colors] || "bg-slate-100 text-slate-600";
+    return colorMap[tag] || colors.neutral.light;
+  };
+
+  const getCategoryColor = (category: string) => {
+    switch(category) {
+      case "Power BI": return colors.primary;
+      case "Machine Learning": return colors.secondary;
+      case "Data Science": return colors.accent;
+      default: return colors.neutral;
+    }
   };
 
   return (
     <section id="projects" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Featured Projects
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Projects Portfolio
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Showcasing real-world data analysis projects and their business
-            impact
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Transforming raw data into actionable insights through innovative solutions
           </p>
+        </motion.div>
+
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {categories.map((category) => {
+            const categoryColor = getCategoryColor(category);
+            return (
+              <button
+                key={category}
+                onClick={() => setActiveFilter(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  activeFilter === category
+                    ? `${categoryColor.medium} text-white shadow-md`
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                }`}
+              >
+                {category}
+              </button>
+            );
+          })}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-slate-50 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
-            >
-              <img
-                src={project.image}
-                alt={project.alt}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-slate-600 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className={`px-3 py-1 rounded-full text-sm ${getTagColor(
-                        tag
-                      )}`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex justify-between items-center">
-                  <Button
-                    variant="link"
-                    className="text-primary hover:text-blue-600 font-medium p-0"
+          {filteredProjects.map((project, index) => {
+            const categoryColor = getCategoryColor(project.category);
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
+                whileHover={{ scale: 1.03, y: -10, boxShadow: "0 0 20px 3px rgba(72, 199, 255, 0.6)" }}
+                className="relative bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden cursor-pointer flex flex-col h-[480px] max-h-[480px]"
+              >
+                <div className="relative h-56 overflow-hidden rounded-t-xl">
+                  <img
+                    src={project.image}
+                    alt={project.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div
+                    className={`absolute top-3 right-3 p-3 rounded-full ${categoryColor.light} shadow-md flex items-center justify-center`}
+                    title={project.category}
                   >
-                    View Details
-                  </Button>
-                  <div className="flex gap-2">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="text-slate-500 hover:text-slate-700"
-                    >
-                      <Github className="h-4 w-4" />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="text-slate-500 hover:text-slate-700"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
+                    {project.icon}
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
+
+                <div className="p-6 flex flex-col flex-grow justify-between">
+                  <div>
+                    <h3 className="text-xl font-semibold tracking-wide text-gray-900 mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-4 max-h-24 overflow-hidden">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map((tag, tagIndex) => (
+                        <span
+                          key={tagIndex}
+                          className={`px-3 py-1 rounded-full text-xs font-medium tracking-wide
+                            ${getTagColor(tag)} select-none`}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex justify-between items-center pt-3 border-t border-gray-200">
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cyan-600 hover:text-cyan-800 flex items-center gap-1 font-semibold tracking-wide transition-colors"
+                      >
+                        View Project <ExternalLink className="h-5 w-5" />
+                      </a>
+
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                        aria-label={`GitHub repo for ${project.title}`}
+                      >
+                        <Github className="h-6 w-6 text-gray-600 hover:text-gray-900" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
-        <div className="text-center mt-12">
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-blue-600 text-white px-8 py-3"
+        <div className="text-center mt-16">
+          <a
+            href="https://github.com/mhnayeem001?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md shadow-md hover:shadow-lg transition-all font-medium"
           >
             View All Projects
-          </Button>
+          </a>
         </div>
       </div>
     </section>
